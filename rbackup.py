@@ -26,16 +26,25 @@ def rbackup (source,dest):
 
 
 def check_back ():
+	from terminal import render
+	
+	if len(sys.argv) > 1 and sys.argv[1] == "-h":
+			print render('%(BOLD)sNAME')
+			print render ('%(NORMAL)s	rbackup - 	creates a incremental backup using rsync to a mounted device')
+			print " "
+			print render ('%(BOLD)sSYNOPSIS')
+			print render ('%(NORMAL)s	rbackup [source directory or file] [destination directory or file]')
+			print "" 
+			print render ('%(BOLD)sEXAMPLE')
+			print render ('%(NORMAL)s	rbackup /tmp/rbackup /tmp2/rbackup')
+			return
 
-	if (len(sys.argv) > 2 and len(sys.argv) < 4):	
+	if (len(sys.argv) > 2 and len(sys.argv) < 4):		
 		source = sys.argv[1]
 		dest = sys.argv[2]
 		print rbackup (source,dest)
-				
 	else:
-		print "Usage rbackup Source Destination"
-		print "example: rbackup /home/rbenzaquen /Vol/rbenzaquen"
-		print " This will Backup your home directory to an external drive"
+		print "Usage: rbackup [Source] [Destination] or -h for help"
 		
 
 check_back ()

@@ -1,1 +1,4 @@
-You need to have Pyton Installed in your computer to use it
+This is simple python program I did to syncronize a [source] with a [destination]
+I mainly use it to maintain a backup from my ntbk to an external hd. 
+It use rsync, and use the --delete option that delete a file from [destination] if no longer is on the [source]
+
